@@ -1,0 +1,32 @@
+1.- ¿Qué problema resuelven las herramientas virtualenv y RVM (o rbenv)? ¿Para qué lenguaje se utiliza cada una? si no utilizas python o ruby, ¿cuál sería la alternativa para tu lenguaje?
+
+virtualenv y RVM permiten trabajar con un ambiente particular de python o ruby respectivamente. Esto permite a su vez trabajar en aplicaciones que requieran
+tener siempre la misma version de ciertos paquetes sin necesidad de dejar de actualizarlos en caso de que lo requieran otros proyectos. Simplemente se crea
+un ambiente con los paquetes viejos para la primera aplicacion, y se usa el ambiente original para aplicaciones con paquetes mas nuevos
+
+2.-¿Qué framework piensas usar?
+
+Django
+
+3.- ¿Qué patrón de diseño utiliza ese framework?
+
+Usa el patron modelo-vista-controlador, para hacer dichos componentes independientes entre si
+
+4.- En el framework seleccionado, ¿cómo se crea la relación entre las tablas de la base de
+datos y las clases definidas?
+
+En Django la relacion se crea definiendo la clase como una subclase de django.db.models.Model, asignando cada campo de la clase por medio del uso de un metodo
+de la clase models. Al hacer esto, el mapper de Django transforma esa clase en una tabla SQL (o diferente dependiendo de las configuraciones) que se agrega a
+la base de datos por medio del API interno del framework
+
+5.-¿Para que se utilizan PIP y Bundler?, si no utilizas python o ruby, ¿cuál sería la
+alternativa para tu lenguaje?
+
+PIP y Bundler son manejadores de paquetes para python y ruby respectivamente. Se usan para obtener, actualizar, eliminar y manejar librerias adicionales.
+
+6.-¿Qué es un Requirements file y un Gemfile? ¿Para qué los usarías en una aplicación?
+
+Son archivos que especifican un ambiente de paquetes , ya sea para python o ruby, con sus versiones para una aplicacion en particular. Se usan con sus manejadores de paquetes respectivos para instalar un ambiente dado dependiendo de las necesidades de la aplicacion. Los usaria en una aplicacion para forzar a que se instale con
+el ambiente para el que fue desarrollado.
+
+
